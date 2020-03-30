@@ -1,0 +1,43 @@
+Vježba 1: Komunikacija i sinkronizacija procesa
+
+Oba programa su pisana u programskom jeziku Python (inacica 3.5) u operacijskom sustavu Ubuntu 16.04.6 LTS.
+Korištena je biblioteka multiprocessing, pa bi programi trebali raditi na operacijskom sustavu Windows.
+Medutim, testiranjem na operacijskom sustavu Windows uocena je nepravilnost kod ispisa, 
+pa se Windows ne preporucuje.
+Program je pisan i testiran u u razvojnom sucelju PyCharm 2019.3.4 x64, 
+pa se isti preporucuje za pokretanje programa. 
+
+a) Redovi poruka:
+	Pokretanjem programa u konzoli je vidljivo izvodenje glavnog programa(vrtuljka)
+	i osam procesa posjetitelja.
+	Nikakav unos nije potreban.
+
+	Izvorni kod je komentiran za dodatno pojašnjenje.
+
+b) Cjevovodi:
+	Kada se progam pokrene, u konzolu je potrebno upisati broj filozofa (procesa) koji ce komunicirati
+	i biti sinkronizirani protokolom Ricarta i Agrawala.
+
+	Broj procesa mora biti izmedu 3 i 10 (ukljucivo).
+
+	Program stvara zadani broj filozofa i prema svakome stvara jedan cjevovod.
+	Glavni program služi za usmjeravanje poruka izmedu filozofa.
+	
+	Proces komunikacije izmedu filozofa je:
+		
+		Filozof 1 šalje poruku glavnom programu preko cjevovoda 1:
+			(filozof 1 -> |cjevovod|- > glavni program)
+
+		Glavni program poruku usmjeri odgovarajucemu filozofu 2:
+			(glavni program -> |cjevovod| -> filozof2)
+
+		Odgovor se na isti nacin šalje natrag.	
+
+	U konzoli je tada vidljiv proces razmjena poruke i sinkronizacije N filozofa oko jednog kriticnog
+	odsjecka (stola).
+
+	Izvorni kod je komentiran za dodatno pojašnjenje.
+	
+
+ 
+	
